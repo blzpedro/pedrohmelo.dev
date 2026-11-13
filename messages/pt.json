@@ -1,0 +1,96 @@
+{
+  "Metadata": {
+    "title": "Pedro Melo | Desenvolvedor Fullstack",
+    "description": "Desenvolvedor fullstack em São Paulo, Brasil, com mais de {years} anos construindo produtos em React, Angular, Node.js e React Native para marcas globais como BMW, Electrolux e Renault.",
+    "ogAlt": "Pedro Melo, desenvolvedor fullstack"
+  },
+  "Nav": {
+    "skip": "Pular para o conteúdo",
+    "home": "Pedro Melo, voltar ao topo",
+    "primary": "Seções",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "experience": "Experiência",
+    "skills": "Habilidades",
+    "contact": "Contato"
+  },
+  "Locale": {
+    "label": "Idioma",
+    "switchTo": "View in English",
+    "en": "English",
+    "pt": "Português"
+  },
+  "Theme": {
+    "toLight": "Mudar para o tema claro",
+    "toDark": "Mudar para o tema escuro"
+  },
+  "Hero": {
+    "title": "Desenvolvedor Fullstack",
+    "headline": "Construo produtos de ponta a ponta: interfaces em React e Angular, APIs em Node.js e apps em React Native.",
+    "intro": "{years} anos construindo para marcas globais como BMW, Electrolux e Renault, incluindo um ano em Lisboa como dev fullstack numa plataforma de e-commerce presente em mais de 30 países.",
+    "facts": "Resumo",
+    "base": "Moro em",
+    "baseValue": "São Paulo, Brasil",
+    "experience": "Experiência",
+    "experienceValue": "{years}+ anos",
+    "now": "Trabalho principal",
+    "focus": "Stack",
+    "emailMe": "Mandar email",
+    "nowValue": "Electrolux Group",
+    "side": "Projeto paralelo",
+    "sideValue": "Movio Entregas",
+    "global": "Marcas globais",
+    "globalValue": "BMW, Electrolux, Renault"
+  },
+  "About": {
+    "title": "Sobre"
+  },
+  "Projects": {
+    "title": "Projetos",
+    "intro": "Três coisas que construí, contadas como estudos de caso. Cada uma tem uma demo para você usar.",
+    "read": "Ler o estudo de caso",
+    "demoBadge": "Demo interativa",
+    "all": "Todos os projetos",
+    "try": "Experimente",
+    "problem": "O problema",
+    "built": "O que construí",
+    "decisions": "Decisões",
+    "results": "Resultados",
+    "stack": "Stack",
+    "role": "Papel",
+    "company": "Empresa",
+    "period": "Período",
+    "next": "Próximo projeto",
+    "notFound": "Este projeto não existe."
+  },
+  "Experience": {
+    "title": "Experiência",
+    "intro": "Oito experiências desde 2019, da mais recente para a primeira, três delas em marcas globais. A Electrolux é meu trabalho principal; a Movio é um projeto paralelo.",
+    "dir": "carreira",
+    "present": "Atual",
+    "stack": "Stack",
+    "sideProject": "projeto paralelo",
+    "window": "Histórico da carreira",
+    "scope": "Alcance"
+  },
+  "Skills": {
+    "title": "Habilidades"
+  },
+  "Education": {
+    "title": "Formação e idiomas",
+    "education": "Formação",
+    "languages": "Idiomas"
+  },
+  "Contact": {
+    "title": "Contato",
+    "text": "Tem uma vaga ou um projeto em mente? O jeito mais rápido de falar comigo é por email.",
+    "copy": "Copiar email",
+    "copied": "Email copiado",
+    "elsewhere": "Também estou em"
+  },
+  "NotFound": {
+    "title": "Esta página não existe",
+    "text": "O link pode estar quebrado ou a página mudou de lugar.",
+    "back": "Ir para a página inicial"
+  }
+}

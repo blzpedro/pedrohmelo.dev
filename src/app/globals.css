@@ -1,26 +1,169 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  One hue: navy ink to azure. Every tone is a blue, so the page reads as one
+  material; contrast comes from lightness, not from a second colour.
+  Dark is the default; an inline script in the layout adds `.light` or `.dark`.
+*/
+:root,
+.dark {
+  --bg: #0c1a2e;
+  --bg-raised: #12233b;
+  --line: #22385a;
+  --text: #e6eefa;
+  --muted: #8ea3c2;
+  --accent: #5b9dff;
+  --accent-text: #7fb0ff;
+  --on-accent: #0c1a2e;
+  --rail: #2c4a73;
+  color-scheme: dark;
+}
+
+.light {
+  --bg: #eef3fb;
+  --bg-raised: #ffffff;
+  --line: #cbd7ea;
+  --text: #0c1a2e;
+  --muted: #4a5e7e;
+  --accent: #1f5fd6;
+  --accent-text: #1a4fb3;
+  --on-accent: #ffffff;
+  --rail: #a9bedf;
+  color-scheme: light;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg-raised: var(--bg-raised);
+  --color-line: var(--line);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-on-accent: var(--on-accent);
+  --color-rail: var(--rail);
+
+  --font-sans: var(--font-overpass), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-overpass-mono), ui-monospace, monospace;
+
+  /* Scale on a 4:3 ratio from a 17px body. */
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.3125rem;
+  --text-lg--line-height: 1.45;
+  --text-xl: 1.75rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.375rem;
+  --text-2xl--line-height: 1.1;
+  --text-3xl: 3.125rem;
+  --text-3xl--line-height: 1.05;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-padding-top: 4.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+
+  .link-underline {
+    text-decoration-line: underline;
+    text-decoration-color: var(--line);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color 150ms;
+  }
+
+  .link-underline:hover {
+    text-decoration-color: var(--accent);
+  }
+}
+
+@layer components {
+  /* Terminal-style typing for the experience prompt; `--chars` is the command length. */
+  .typed {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: bottom;
+    width: calc(var(--chars) * 1ch);
+    animation: typed-in 420ms steps(var(--chars)) both;
+  }
+
+  @keyframes typed-in {
+    from {
+      width: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .typed {
+      animation: none;
+    }
+  }
+}
+
+@layer components {
+  /* A terminal stays dark in both themes, like a real one. */
+  .terminal {
+    --bg: #09131f;
+    --bg-raised: #0f1d30;
+    --line: #1f3456;
+    --text: #e6eefa;
+    --muted: #8ea3c2;
+    --accent: #5b9dff;
+    --accent-text: #7fb0ff;
+    --on-accent: #09131f;
+    --rail: #34557f;
+    color-scheme: dark;
+    background: var(--bg);
+    color: var(--text);
+  }
+}
+
+@layer components {
+  .terminal-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--rail) transparent;
+  }
 }
